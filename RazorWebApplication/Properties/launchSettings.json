@@ -1,12 +1,13 @@
 {
     "iisSettings": {
         "windowsAuthentication": false,
-        "anonymousAuthentication": false,
         "iis": {
+            "anonymousAuthentication": false,
             "applicationUrl": "http://localhost/RazorWebApplication",
             "sslPort": 0
         },
         "iisExpress": {
+            "anonymousAuthentication": true,
             "applicationUrl": "http://localhost:51006",
             "sslPort": 0
         }
