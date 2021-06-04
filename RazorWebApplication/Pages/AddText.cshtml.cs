@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
 using System;
 using System.Threading.Tasks;
-using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.DatabaseContext;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace RandomSongSearchEngine.Pages

@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RandomSongSearchEngine;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using RandomSongSearchEngine.DatabaseEntities;
 
-
-namespace RandomSongSearchEngine.DbContexts
+namespace RandomSongSearchEngine.DatabaseContext
 {
     /// <summary>
     /// Контекст (таблицы) базы данных

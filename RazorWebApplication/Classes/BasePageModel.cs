@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.DatabaseContext;
 
 namespace RandomSongSearchEngine.Classes
 {

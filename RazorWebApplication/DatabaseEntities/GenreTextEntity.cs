@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RandomSongSearchEngine.DbContexts
+﻿namespace RandomSongSearchEngine.DatabaseEntities
 {
     /// <summary>
     /// Строка таблицы бд, связывающая песни и их жанры

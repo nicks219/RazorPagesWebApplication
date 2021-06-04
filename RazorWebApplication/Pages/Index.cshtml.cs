@@ -3,8 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
-using RandomSongSearchEngine.DbContexts;
-using RandomSongSearchEngine.Logger;
+using RandomSongSearchEngine.DatabaseContext;
 
 namespace RandomSongSearchEngine.Pages
 {

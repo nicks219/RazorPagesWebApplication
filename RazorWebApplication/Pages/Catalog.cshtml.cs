@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
-using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.DatabaseContext;
 
 namespace RandomSongSearchEngine.Pages
 {

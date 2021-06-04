@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.DatabaseContext;
 
 namespace RandomSongSearchEngine.Classes
 {

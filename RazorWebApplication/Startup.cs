@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.DatabaseContext;
 using System;
 using System.IO;
 using RandomSongSearchEngine.Logger;
