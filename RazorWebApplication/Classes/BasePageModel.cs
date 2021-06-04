@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.DbContexts;
 
-namespace RazorWebApplication.MyClasses
+namespace RandomSongSearchEngine.Classes
 {
     /// <summary>
     /// Базовый класс для моделей RazorPage

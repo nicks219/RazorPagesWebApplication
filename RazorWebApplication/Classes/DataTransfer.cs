@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RazorWebApplication.MyClasses
+namespace RandomSongSearchEngine.Classes
 {
     /// <summary>
     /// Структура для передачи данных песни

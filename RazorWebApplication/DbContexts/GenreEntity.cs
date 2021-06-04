@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RazorWebApplication.MyDbContexts
+namespace RandomSongSearchEngine.DbContexts
 {
     /// <summary>
     /// Строка таблицы бд с жанрами песен

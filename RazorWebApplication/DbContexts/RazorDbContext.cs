@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RazorWebApplication;
+using RandomSongSearchEngine;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 
-namespace RazorWebApplication.MyDbContexts
+namespace RandomSongSearchEngine.DbContexts
 {
     /// <summary>
     /// Контекст (таблицы) базы данных

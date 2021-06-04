@@ -5,16 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.DbContexts;
 using System;
 using System.IO;
-using RazorWebApplication.MyLogger;
+using RandomSongSearchEngine.Logger;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
-using RazorWebApplication.MyMiddleware;
+using RandomSongSearchEngine.Middleware;
 using System.Runtime.CompilerServices;
 
-namespace RazorWebApplication
+namespace RandomSongSearchEngine
 {
     public class Startup
     {

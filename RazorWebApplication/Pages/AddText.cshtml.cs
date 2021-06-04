@@ -1,11 +1,11 @@
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
+using RandomSongSearchEngine.Classes;
 using System;
 using System.Threading.Tasks;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.DbContexts;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace RazorWebApplication.Pages
+namespace RandomSongSearchEngine.Pages
 {
     /// <summary>
     /// Добавление новой песни

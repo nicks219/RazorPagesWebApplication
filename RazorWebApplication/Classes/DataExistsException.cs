@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RazorWebApplication.MyClasses
+namespace RandomSongSearchEngine.Classes
 {
     /// <summary>
     /// Моё исключение

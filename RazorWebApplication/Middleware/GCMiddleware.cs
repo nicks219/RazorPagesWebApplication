@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RazorWebApplication.MyMiddleware
+namespace RandomSongSearchEngine.Middleware
 {
     /// <summary>
     /// Настройка сборщика мусора на частое освобождение памяти

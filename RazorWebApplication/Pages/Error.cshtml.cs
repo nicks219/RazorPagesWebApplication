@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.Classes;
+using RandomSongSearchEngine.DbContexts;
 
-namespace RazorWebApplication.Pages
+namespace RandomSongSearchEngine.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : BasePageModel

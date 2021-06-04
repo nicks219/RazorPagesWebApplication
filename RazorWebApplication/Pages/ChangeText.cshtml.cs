@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.Classes;
+using RandomSongSearchEngine.DbContexts;
 
-namespace RazorWebApplication.Pages
+namespace RandomSongSearchEngine.Pages
 {
     /// <summary>
     /// Изменение существующей песни

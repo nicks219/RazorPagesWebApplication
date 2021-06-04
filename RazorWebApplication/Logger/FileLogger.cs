@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Text;
 
-namespace RazorWebApplication.MyLogger
+namespace RandomSongSearchEngine.Logger
 {
     /// <summary>
     /// Мой логгер

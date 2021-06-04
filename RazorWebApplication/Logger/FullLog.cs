@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
+using RandomSongSearchEngine.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace RazorWebApplication.MyLogger
+namespace RandomSongSearchEngine.Logger
 {
     public static class FullLog
     {

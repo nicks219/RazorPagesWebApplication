@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
-using RazorWebApplication.MyDbContexts;
-using RazorWebApplication.MyLogger;
+using RandomSongSearchEngine.Classes;
+using RandomSongSearchEngine.DbContexts;
+using RandomSongSearchEngine.Logger;
 
-namespace RazorWebApplication.Pages
+namespace RandomSongSearchEngine.Pages
 {
     //TODO убери js из layout
     //TODO при каждом создании BasePageModel происходит injected context контекста Pasha который не уничтожается - может это и жрёт память? (нет)

@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorWebApplication.MyClasses;
-using RazorWebApplication.MyDbContexts;
+using RandomSongSearchEngine.Classes;
+using RandomSongSearchEngine.DbContexts;
 
-namespace RazorWebApplication.Pages
+namespace RandomSongSearchEngine.Pages
 {
     /// <summary>
     /// Каталог песен
@@ -26,10 +26,19 @@ namespace RazorWebApplication.Pages
         {
             _logger = logger;
             pageSize = 15;
-            using (var scope = _serviceScopeFactory.CreateScope())//
+            try
             {
-                var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
-                SongsCount = database.Text.Count();
+                using (var scope = _serviceScopeFactory.CreateScope())//
+                {
+                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
+                    SongsCount = database.Text.Count();
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "[CatalogModel]: no database");
+                //в случае отсутствия бд мы не придём к null referenece exception из-за TitleAndTextID
+                TitleAndTextID = new List<Tuple<string, int>>();
             }
         }
 

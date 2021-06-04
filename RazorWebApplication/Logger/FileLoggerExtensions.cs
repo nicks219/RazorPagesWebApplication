@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace RazorWebApplication.MyLogger
+namespace RandomSongSearchEngine.Logger
 {
     public static class FileLoggerExtensions
     {
