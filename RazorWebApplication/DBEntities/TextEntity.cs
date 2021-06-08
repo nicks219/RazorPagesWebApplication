@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RandomSongSearchEngine.DatabaseEntities
+namespace RandomSongSearchEngine.DBEntities
 {
     /// <summary>
     /// Строка таблицы бд с текстами песен

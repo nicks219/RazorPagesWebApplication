@@ -1,4 +1,4 @@
-﻿namespace RandomSongSearchEngine.DatabaseEntities
+﻿namespace RandomSongSearchEngine.DBEntities
 {
     /// <summary>
     /// Строка таблицы бд, связывающая песни и их жанры

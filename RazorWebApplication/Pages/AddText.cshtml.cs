@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
 using System;
 using System.Threading.Tasks;
-using RandomSongSearchEngine.DatabaseContext;
+using RandomSongSearchEngine.DBContext;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace RandomSongSearchEngine.Pages
@@ -27,7 +27,7 @@ namespace RandomSongSearchEngine.Pages
                 //await using (var database = new RazorDbContext())
                 using (var scope = _serviceScopeFactory.CreateScope())//
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();//
                     
                     await CreateCheckboxesNamesAsync(database);
                 }
@@ -50,7 +50,7 @@ namespace RandomSongSearchEngine.Pages
                 //await using (var database = new RazorDbContext())
                 using (var scope = _serviceScopeFactory.CreateScope())//
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();//
                     
                     await AddSongToDatabaseAsync(database);
                     await CreateTextAndTitleAsync(database, SavedTextId);

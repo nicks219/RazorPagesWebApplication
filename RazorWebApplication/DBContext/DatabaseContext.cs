@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RandomSongSearchEngine.DatabaseEntities;
+using RandomSongSearchEngine.DBEntities;
 
-namespace RandomSongSearchEngine.DatabaseContext
+namespace RandomSongSearchEngine.DBContext
 {
     /// <summary>
     /// Контекст (таблицы) базы данных
     /// </summary>
-    public class RazorDbContext : DbContext
+    public class DatabaseContext : DbContext
     {
         /// <summary>
         /// Конструктор, конфигурирующий контекст базы данных
         /// </summary>
         /// <param name="option"></param>
-        public RazorDbContext(DbContextOptions<RazorDbContext> option) : base(option)
+        public DatabaseContext(DbContextOptions<DatabaseContext> option) : base(option)
         {
         }
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
-using RandomSongSearchEngine.DatabaseContext;
+using RandomSongSearchEngine.DBContext;
 
 namespace RandomSongSearchEngine.Pages
 {
@@ -30,7 +30,7 @@ namespace RandomSongSearchEngine.Pages
             {
                 using (var scope = _serviceScopeFactory.CreateScope())//
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();//
                     SongsCount = database.Text.Count();
                 }
             }
@@ -66,7 +66,7 @@ namespace RandomSongSearchEngine.Pages
             {
                 using (var scope = _serviceScopeFactory.CreateScope())//
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();//
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();//
                     await CreateSongsDataCatalogViewAsync(database, PageNumber, pageSize);
                 }
             }

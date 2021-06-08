@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
-using RandomSongSearchEngine.DatabaseContext;
+using RandomSongSearchEngine.DBContext;
 
 namespace RandomSongSearchEngine.Pages
 {
@@ -45,7 +45,7 @@ namespace RandomSongSearchEngine.Pages
                 }
                 using (var scope = _serviceScopeFactory.CreateScope())
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
                     await CreateTextAndTitleAsync(database, SavedTextId);
                     await CreateCheckboxesNamesAsync(database);
                     InitialCheckboxes = await CreateCheckedGenresAsync(database);
@@ -72,7 +72,7 @@ namespace RandomSongSearchEngine.Pages
 
                 using (var scope = _serviceScopeFactory.CreateScope())
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
                     await ChangeSongInDatabaseAsync(database, InitialCheckboxes);
                 }
             }
@@ -122,7 +122,7 @@ namespace RandomSongSearchEngine.Pages
         /// </summary>
         /// <param name="database">Контекст базы данных</param>
         /// <returns>Список жанров</returns>
-        private async Task<List<int>> CreateCheckedGenresAsync(RazorDbContext database)
+        private async Task<List<int>> CreateCheckedGenresAsync(DatabaseContext database)
         {
             List<int> checkedList = await database.CreateCheckedListChangeViewSql(SavedTextId).ToListAsync();
             foreach (int i in checkedList)

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using RandomSongSearchEngine.DatabaseContext;
+using RandomSongSearchEngine.DBContext;
 
 namespace RandomSongSearchEngine.Classes
 {
@@ -83,7 +83,7 @@ namespace RandomSongSearchEngine.Classes
         /// <summary>
         /// Модель базы данных с песнями, жанрами и их связью
         /// </summary>
-        protected RazorDbContext Database { get; set; }
+        protected DatabaseContext Database { get; set; }
 
         /// <summary>
         /// Изменение отмеченных жанров в списке на "checked"
@@ -123,7 +123,7 @@ namespace RandomSongSearchEngine.Classes
         /// <param name="database">Контекст базы данных</param>
         /// <param name="initialCheckboxes">Новый список отмеченных во вьюхе жанров</param>
         /// <returns></returns>
-        protected async Task ChangeSongInDatabaseAsync(RazorDbContext database, List<int> initialCheckboxes)
+        protected async Task ChangeSongInDatabaseAsync(DatabaseContext database, List<int> initialCheckboxes)
         {
             DataTransfer dt = new DataTransfer
             {
@@ -144,7 +144,7 @@ namespace RandomSongSearchEngine.Classes
         /// </summary>
         /// <param name="database">Контекст базы данных</param>
         /// <returns></returns>
-        protected async Task AddSongToDatabaseAsync(RazorDbContext database)
+        protected async Task AddSongToDatabaseAsync(DatabaseContext database)
         {
             DataTransfer dt = new DataTransfer
             {
@@ -165,7 +165,7 @@ namespace RandomSongSearchEngine.Classes
         /// <param name="database">Контекст базы данных</param>
         /// <param name="textId">ID песни</param>
         /// <returns></returns>
-        protected async Task CreateTextAndTitleAsync(RazorDbContext database, int textId)
+        protected async Task CreateTextAndTitleAsync(DatabaseContext database, int textId)
         {
             //метод оставляет на экране ранее введенный текст в случае большинства исключений
             var r = await database.CreateTitleAndTextSql(textId).ToListAsync();
@@ -186,7 +186,7 @@ namespace RandomSongSearchEngine.Classes
         /// </summary>
         /// <param name="database">Контекст базы данных</param>
         /// <returns></returns>
-        protected async Task CreateCheckboxesNamesAsync(RazorDbContext database)
+        protected async Task CreateCheckboxesNamesAsync(DatabaseContext database)
         {
             List<Tuple<string, int>> genresNames = await database.CreateCheckboxesDataSql().ToListAsync();
             foreach (var r in genresNames)
@@ -211,7 +211,7 @@ namespace RandomSongSearchEngine.Classes
         /// <param name="savedLastViewedPage">Текущая страница каталога</param>
         /// <param name="pageSize">Количество песен на странице</param>
         /// <returns></returns>
-        protected async Task CreateSongsDataCatalogViewAsync(RazorDbContext database, int savedLastViewedPage, int pageSize)
+        protected async Task CreateSongsDataCatalogViewAsync(DatabaseContext database, int savedLastViewedPage, int pageSize)
         {
             TitleAndTextID = await database.CreateSongsDataCatalogViewSql(savedLastViewedPage, pageSize).ToListAsync();
             SavedTextId = TitleAndTextID[0].Item2;

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
-using RandomSongSearchEngine.DatabaseContext;
+using RandomSongSearchEngine.DBContext;
 
 namespace RandomSongSearchEngine.Pages
 {
@@ -40,7 +40,7 @@ namespace RandomSongSearchEngine.Pages
             {
                 using (var scope = _serviceScopeFactory.CreateScope())
                 {
-                    var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();
+                    var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
                     await CreateCheckboxesNamesAsync(database: database);
                 }
                 InitCheckedGenres();
@@ -75,7 +75,7 @@ namespace RandomSongSearchEngine.Pages
             }
             using (var scope = _serviceScopeFactory.CreateScope())
             {
-                var database = scope.ServiceProvider.GetRequiredService<RazorDbContext>();
+                var database = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
                 int randomResult = await database.RandomizatorAsync(AreChecked);
                 if (randomResult == 0)
                 {
