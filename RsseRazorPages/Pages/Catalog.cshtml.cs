@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,14 +11,14 @@ using RandomSongSearchEngine.DBContext;
 namespace RandomSongSearchEngine.Pages
 {
     /// <summary>
-    /// Каталог песен
+    /// РљР°С‚Р°Р»РѕРі РїРµСЃРµРЅ
     /// </summary>
     public class CatalogModel : BasePageModel
     {
         private readonly ILogger<CatalogModel> _logger;
 
         /// <summary>
-        /// Количество песен на одной странице
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЃРµРЅ РЅР° РѕРґРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ
         /// </summary>
         private readonly int pageSize;
 
@@ -37,25 +37,25 @@ namespace RandomSongSearchEngine.Pages
             catch (Exception e)
             {
                 _logger.LogError(e, "[CatalogModel]: no database");
-                //в случае отсутствия бд мы не придём к null referenece exception из-за TitleAndTextID
+                //РІ СЃР»СѓС‡Р°Рµ РѕС‚СЃСѓС‚СЃС‚РІРёСЏ Р±Рґ РјС‹ РЅРµ РїСЂРёРґС‘Рј Рє null referenece exception РёР·-Р·Р° TitleAndTextID
                 TitleAndTextID = new List<Tuple<string, int>>();
             }
         }
 
         /// <summary>
-        /// Используется для определения какая кнопка была нажата во вьюхе
+        /// РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ РєР°РєР°СЏ РєРЅРѕРїРєР° Р±С‹Р»Р° РЅР°Р¶Р°С‚Р° РІРѕ РІСЊСЋС…Рµ
         /// </summary>
         [BindProperty]
         public List<int> NavigationButtons { get; set; }
 
         /// <summary>
-        /// Количество песен в базе данных
+        /// РљРѕР»РёС‡РµСЃС‚РІРѕ РїРµСЃРµРЅ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С…
         /// </summary>
         [BindProperty]
         public int SongsCount { get; set; }
 
         /// <summary>
-        /// Номер последней просмотренной страницы
+        /// РќРѕРјРµСЂ РїРѕСЃР»РµРґРЅРµР№ РїСЂРѕСЃРјРѕС‚СЂРµРЅРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹
         /// </summary>
         public int PageNumber { get; set; }
 
@@ -77,9 +77,9 @@ namespace RandomSongSearchEngine.Pages
         }
 
         /// <summary>
-        /// Переход на страницу редактирования песни при клике на неё ("ChangeText")
+        /// РџРµСЂРµС…РѕРґ РЅР° СЃС‚СЂР°РЅРёС†Сѓ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РїРµСЃРЅРё РїСЂРё РєР»РёРєРµ РЅР° РЅРµС‘ ("ChangeText")
         /// </summary>
-        /// <param name="id">ID песни</param>
+        /// <param name="id">ID РїРµСЃРЅРё</param>
         /// <returns></returns>
         public IActionResult OnGetRedirect(int id)
         {
@@ -89,7 +89,7 @@ namespace RandomSongSearchEngine.Pages
 
         public async Task OnPostAsync(int id)
         {
-            //Предполагается, что браузер прислал неиспорченные данные
+            //РџСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ, С‡С‚Рѕ Р±СЂР°СѓР·РµСЂ РїСЂРёСЃР»Р°Р» РЅРµРёСЃРїРѕСЂС‡РµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ
             PageNumber = id;
             if (NavigationButtons != null && NavigationButtons[0] == 2)
             {

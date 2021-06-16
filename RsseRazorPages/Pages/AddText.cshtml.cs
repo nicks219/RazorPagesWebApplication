@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Logging;
+п»їusing Microsoft.Extensions.Logging;
 using RandomSongSearchEngine.Classes;
 using System;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace RandomSongSearchEngine.Pages
 {
     /// <summary>
-    /// Добавление новой песни
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РїРµСЃРЅРё
     /// </summary>
     public class AddTextModel : BasePageModel
     {
